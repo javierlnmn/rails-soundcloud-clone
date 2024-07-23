@@ -1,0 +1,69 @@
+<% if notice %>
+
+<div class="notice" id="notice-pop-up-container">
+    
+    <div class="fixed top-5 left-0 right-0 animate-enter-screen w-[500px] max-w-[90%] mx-auto bg-orange-400 text-white flex flex-col shadow-lg">
+        <p class="p-6"><%= notice %></p>
+        <span class="-mb-4 h-4 w-full bg-orange-500 animate-disappear-width"></span>
+        <span class="absolute top-1 right-3 text-2xl cursor-pointer" id="close-notice-button">&times;</span>
+    </div>
+
+    <script>
+        var noticePopUpContainer = document.getElementById('notice-pop-up-container');
+
+        setTimeout(() => {
+            noticePopUpContainer.classList.add('animate-leave-screen');
+            setTimeout(() => {
+                noticePopUpContainer.classList.add('hidden');
+            }, 1000);
+        }, 4000);
+
+        var closeNoticeButton = document.getElementById('close-notice-button');
+
+        closeNoticeButton.addEventListener('click', () => {
+            noticePopUpContainer.classList.add('animate-leave-screen');
+            setTimeout(() => {
+                noticePopUpContainer.classList.add('hidden');
+            }, 1000);
+        });
+    </script>
+
+</div>
+
+<% end %>
+
+
+<% if alert %>
+
+<div class="alert" id="alert-pop-up-container">
+    
+    <div class="fixed top-5 left-0 right-0 animate-enter-screen w-[500px] max-w-[90%] mx-auto bg-orange-400 text-white flex flex-col shadow-lg">
+        <p class="p-6"><%= alert %></p>
+        <span class="-mb-4 h-4 w-full bg-orange-500 animate-disappear-width"></span>
+        <span class="absolute top-1 right-3 text-2xl cursor-pointer" id="close-alert-button">&times;</span>
+    </div>
+
+
+    <script>
+        var alertPopUpContainer = document.getElementById('alert-pop-up-container');
+
+        setTimeout(() => {
+            alertPopUpContainer.classList.add('animate-leave-screen');
+            setTimeout(() => {
+                alertPopUpContainer.classList.add('hidden');
+            }, 1000);
+        }, 4000);
+
+        var closeAlertButton = document.getElementById('close-alert-button');
+
+        closeAlertButton.addEventListener('click', () => {
+            alertPopUpContainer.classList.add('animate-leave-screen');
+            setTimeout(() => {
+                alertPopUpContainer.classList.add('hidden');
+            }, 1000);
+        });
+    </script>
+
+</div>
+
+<% end %>

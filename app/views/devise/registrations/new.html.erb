@@ -1,0 +1,35 @@
+<div class="bg-gradient-to-br from-orange-500 to-orange-300 min-h-screen grid place-items-center">
+    <div class="max-w-xl w-full mx-auto shadow-lg bg-white rounded-lg p-8 mx-5 max-md:h-full max-md:w-full max-md:max-w-full max-md:rounded-none max-md:flex max-md:flex-col max-md:items-center max-md:justify-center">
+        <h2 class="text-xl mb-4 text-center">Sign up</h2>
+
+        <div class="w-full mx-auto">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+
+                <div class="field mb-4">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "ring-0 ring-offset-orange-300 w-full rounded-lg bg-gray-200/60 border-none outline-none transition-all hover:shadow-md focus:shadow-lg" %>
+                </div>
+
+                <div class="field mb-4">
+                    <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username", class: "ring-0 ring-offset-orange-300 w-full rounded-lg bg-gray-200/60 border-none outline-none transition-all hover:shadow-md focus:shadow-lg" %>
+                </div>
+
+                <div class="field mb-4">
+                    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "ring-0 ring-offset-orange-300 w-full rounded-lg bg-gray-200/60 border-none outline-none transition-all hover:shadow-md focus:shadow-lg" %>
+                </div>
+
+                <div class="field mb-4">
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Repeat Password", class: "ring-0 ring-offset-orange-300 w-full rounded-lg bg-gray-200/60 border-none outline-none transition-all hover:shadow-md focus:shadow-lg" %>
+                </div>
+
+                <div class="actions">
+                    <%= f.submit "Sign up", class: "bg-orange-500 w-full p-2 text-white rounded-lg cursor-pointer transition-colors hover:bg-orange-600" %>
+                </div>
+            <% end %>
+
+            <div class="flex flex-col items-center mt-4 gap-4">
+                <%= render "devise/shared/links" %>
+            </div>
+        </div>
+    </div>
+</div>

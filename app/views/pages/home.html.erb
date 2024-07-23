@@ -1,0 +1,12 @@
+<div class="min-h-screen grid place-items-center bg-gradient-to-br from-orange-500 to-orange-300">
+    <div class="text-white flex flex-col gap-2">
+        <h1 class="font-bold text-6xl">SoundCloud</h1>
+        <p>Share your music with the world!</p>
+        <% if current_user %>
+            <%= link_to "Sign out", destroy_user_session_path, class: "bg-red-400 rounded-md shadow-sm text-zinc-100 px-4 py-2 w-fit transition-all hover:shadow-xl", 
+                data: { turbo_method: :delete } %>
+        <% else %>
+            <%= link_to "Sign in", new_user_session_path, class: "bg-white rounded-md shadow-sm text-zinc-800 px-4 py-2 w-fit transition-all hover:shadow-xl" %>
+        <% end %>
+    </div>
+</div>
