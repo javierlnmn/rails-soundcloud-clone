@@ -1,4 +1,4 @@
-<% if notice %>
+<% if notice.present? %>
 
 <div class="notice" id="notice-pop-up-container">
     
@@ -9,7 +9,7 @@
     </div>
 
     <script>
-        var noticePopUpContainer = document.getElementById('notice-pop-up-container');
+        const noticePopUpContainer = document.getElementById('notice-pop-up-container');
 
         setTimeout(() => {
             noticePopUpContainer.classList.add('animate-leave-screen');
@@ -18,7 +18,7 @@
             }, 1000);
         }, 4000);
 
-        var closeNoticeButton = document.getElementById('close-notice-button');
+        const closeNoticeButton = document.getElementById('close-notice-button');
 
         closeNoticeButton.addEventListener('click', () => {
             noticePopUpContainer.classList.add('animate-leave-screen');
@@ -33,7 +33,7 @@
 <% end %>
 
 
-<% if alert %>
+<% if alert.present? %>
 
 <div class="alert" id="alert-pop-up-container">
     
@@ -45,7 +45,7 @@
 
 
     <script>
-        var alertPopUpContainer = document.getElementById('alert-pop-up-container');
+        const alertPopUpContainer = document.getElementById('alert-pop-up-container');
 
         setTimeout(() => {
             alertPopUpContainer.classList.add('animate-leave-screen');
@@ -54,7 +54,7 @@
             }, 1000);
         }, 4000);
 
-        var closeAlertButton = document.getElementById('close-alert-button');
+        const closeAlertButton = document.getElementById('close-alert-button');
 
         closeAlertButton.addEventListener('click', () => {
             alertPopUpContainer.classList.add('animate-leave-screen');
